@@ -2,13 +2,21 @@
   var app = angular.module('arit', [ ]);
 
   app.controller('PlayerController', function() {
-    this.player = player;
+    this.players = players;
   });
 
-  var player = {
-    name: 'John Doe',
-    description: 'Tall. Very tall.',
-    attacked: false
-  }
+  var players = [
+    {
+      name: 'John Doe',
+      description: 'Tall. Very tall.',
+      attacked: false
+    },
+    {
+      name: 'Joe Smith',
+      description: 'Quite average, wears glasses.',
+      attacked: true
+    }
+  ];
+
 
 })();

@@ -6,8 +6,10 @@
   <body>
 
     <div ng-controller="PlayerController as store">
-      <div ng-repeat="player in store.players">
+      <div ng-repeat="player in store.players | orderBy:'-kills'">
         <h1> {{player.name}} </h1>
+        <h2> {{player.kills}} kills</h2>
+        <h2> {{player.deaths}} deaths</h2>
         <p> {{player.description}} </p>
         <button ng-hide="player.attacked"> I attacked this player! </button>
       </div>

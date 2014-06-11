@@ -36,7 +36,7 @@
               <th>Name</th>
               <th>Kills</th>
               <th>Deaths</th>
-              <th>Details</th>
+              <th>K/D</th>
             </tr>
           </thead>
           <tbody>
@@ -45,8 +45,7 @@
               <td>{{player.name}}</td>
               <td>{{player.kills}} kills</td>
               <td>{{player.deaths}} deaths</td>
-              <td>{{player.description}}</td>
-              <td><button class="btn btn-default" ng-hide="player.attacked"> I attacked this player! </button></td>
+              <td>{{player.kills / player.deaths | number : 2}}</td>
             </tr>
           </tbody>
         </table>

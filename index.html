@@ -28,15 +28,27 @@
         </ul>
         <h3 class="text-muted">The ARIT of War</h3>
       </div>
-      <div ng-controller="PlayerController as store">
-        <div ng-repeat="player in store.players | orderBy:'-kills'">
-          <h1> {{player.name}} </h1>
-          <h2> {{player.kills}} kills</h2>
-          <h2> {{player.deaths}} deaths</h2>
-          <p> {{player.description}} </p>
-          <button ng-hide="player.attacked"> I attacked this player! </button>
-        </div>
-      </div>
+      <table class="table table-striped table-hover" ng-controller="PlayerController as store">
+        <thead>
+          <tr>
+            <th>Rank</th>
+            <th>Name</th>
+            <th>Kills</th>
+            <th>Deaths</th>
+            <th>Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="player in store.players | orderBy:'-kills'">
+            <td>index</td>
+            <td>{{player.name}}</td>
+            <td>{{player.kills}} kills</td>
+            <td>{{player.deaths}} deaths</td>
+            <td>{{player.description}}</td>
+            <td><button class="btn btn-default" ng-hide="player.attacked"> I attacked this player! </button></td>
+          </tr>
+        </tbody>
+      </table>
       <div class="footer">
         <p>Find us on &nbsp;<a href="https://github.com/sman591/arit-www/"><i class="fa fa-github"></i> GitHub</a></p>
       </div>

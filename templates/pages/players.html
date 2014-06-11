@@ -1,1 +1,11 @@
-<h1 class="page-title">Players</h1>
+<h1 class="page-header">Players</h1>
+
+<div class="row" ng-controller="PlayerController as playerCtrl">
+  <div class="col-sm-6 player-card" ng-repeat="player in playerCtrl.players">
+    <div class="well">
+      <h2>{{player.name}}</h2>
+      <h4>Kills: {{player.kills}} - Deaths: {{player.deaths}} - K/D: {{player.kills / player.deaths | number : 2}}</h4>
+      <p>{{player.description}}</p>
+    </div>
+  </div>
+</div>

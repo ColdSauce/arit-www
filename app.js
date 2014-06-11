@@ -1,6 +1,38 @@
 (function(){
   var app = angular.module('arit', [ ]);
 
+  app.controller('PageController', function() {
+    this.page = {};
+    this.pages = pages;
+
+    this.setPage = function(setPage){
+      this.page = setPage || {};
+    };
+
+    this.isCurrent = function(pageSlug){
+      return this.page.slug === pageSlug;
+    }
+  });
+
+  var pages = [
+    {
+      title: 'Home',
+      slug: ''
+    },
+    {
+      title: 'Leaderboard',
+      slug: 'leaderboard'
+    },
+    {
+      title: 'Players',
+      slug: 'players'
+    },
+    {
+      title: 'About',
+      slug: 'about'
+    }
+  ];
+
   app.controller('PlayerController', function() {
     this.players = players;
   });

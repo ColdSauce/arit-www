@@ -18,37 +18,40 @@
     <![endif]-->
   </head>
   <body>
-    <div class="container">
+    <div class="container" ng-controller="PageController as pageCtrl">
       <div class="header">
         <ul class="nav nav-pills pull-right">
-          <li><a href="#">Home</a></li>
-          <li class="active"><a href="#">Leaderboard</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
+          <li ng-repeat="page in pageCtrl.pages" ng-class="{ active:pageCtrl.isCurrent(page.slug) }"><a href="#{{page.slug}}" ng-click="pageCtrl.setPage(page)">{{page.title}}</a></li>
         </ul>
         <h3 class="text-muted">The ARIT of War</h3>
       </div>
-      <table class="table table-striped table-hover" ng-controller="PlayerController as store">
-        <thead>
-          <tr>
-            <th>Rank</th>
-            <th>Name</th>
-            <th>Kills</th>
-            <th>Deaths</th>
-            <th>Details</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr ng-repeat="player in store.players | orderBy:'-kills'">
-            <td>index</td>
-            <td>{{player.name}}</td>
-            <td>{{player.kills}} kills</td>
-            <td>{{player.deaths}} deaths</td>
-            <td>{{player.description}}</td>
-            <td><button class="btn btn-default" ng-hide="player.attacked"> I attacked this player! </button></td>
-          </tr>
-        </tbody>
-      </table>
+
+      <h1>{{pageCtrl.page.title || "Please select a page above."}}</h1>
+
+      <section id="leaderboard" ng-show="pageCtrl.isCurrent('leaderboard')">
+        <table class="table table-striped table-hover" ng-controller="PlayerController as store">
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>Name</th>
+              <th>Kills</th>
+              <th>Deaths</th>
+              <th>Details</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="player in store.players | orderBy:'-kills'">
+              <td>index</td>
+              <td>{{player.name}}</td>
+              <td>{{player.kills}} kills</td>
+              <td>{{player.deaths}} deaths</td>
+              <td>{{player.description}}</td>
+              <td><button class="btn btn-default" ng-hide="player.attacked"> I attacked this player! </button></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
       <div class="footer">
         <p>Find us on &nbsp;<a href="https://github.com/sman591/arit-www/"><i class="fa fa-github"></i> GitHub</a></p>
       </div>

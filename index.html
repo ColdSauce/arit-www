@@ -26,8 +26,6 @@
         <h3 class="text-muted">The ARIT of War</h3>
       </div>
 
-      <h1>{{pageCtrl.page.title || "Please select a page above."}}</h1>
-
       <section ng-repeat="page in pageCtrl.pages" id="{{page.slug}}" ng-show="pageCtrl.isCurrent(page.slug)" ng-include="'templates/pages/' + (page.template || page.slug) + '.html'"></section>
 
       <div class="footer">

@@ -30,7 +30,8 @@
   var pages = [
     {
       title: 'Home',
-      slug: ''
+      slug: '',
+      template: 'home'
     },
     {
       title: 'Leaderboard',

@@ -24,7 +24,7 @@
       return this.page.slug === pageSlug;
     };
 
-    this.setPage(window.location.hash.split("#")[1] || '');
+    this.setPage(window.location.hash.split("#/")[1] || '');
   });
 
   var pages = [

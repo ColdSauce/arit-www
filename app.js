@@ -5,13 +5,26 @@
     this.page = {};
     this.pages = pages;
 
-    this.setPage = function(setPage){
-      this.page = setPage || {};
+    this.setPage = function(slug){
+      this.page = this.getPage(slug);
+    };
+
+    this.getPage = function(slug){
+      var newPage = {};
+      this.pages.forEach(function(page){
+        if (page.slug == slug)
+          newPage = page;
+      });
+      return newPage;
     };
 
     this.isCurrent = function(pageSlug){
+      if (!this.page)
+        return false
       return this.page.slug === pageSlug;
-    }
+    };
+
+    this.setPage(window.location.hash.split("#")[1] || '');
   });
 
   var pages = [

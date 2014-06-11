@@ -21,7 +21,7 @@
     <div class="container" ng-controller="PageController as pageCtrl">
       <div class="header">
         <ul class="nav nav-pills pull-right">
-          <li ng-repeat="page in pageCtrl.pages" ng-class="{ active:pageCtrl.isCurrent(page.slug) }"><a href="#{{page.slug}}" ng-click="pageCtrl.setPage(page)">{{page.title}}</a></li>
+          <li ng-repeat="page in pageCtrl.pages" ng-class="{ active:pageCtrl.isCurrent(page.slug) }"><a href="#{{page.slug}}" ng-click="pageCtrl.setPage(page.slug)">{{page.title}}</a></li>
         </ul>
         <h3 class="text-muted">The ARIT of War</h3>
       </div>

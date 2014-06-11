@@ -31,6 +31,17 @@ body {
   border-top: 1px solid #e5e5e5;
 }
 
+.player-card h2 {
+  margin-top: 0px;
+}
+
+.player-card h5 {
+  color: #999;
+  text-transform: uppercase;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 12px;
+}
+
 /* Customize container */
 @media (min-width: 768px) {
   .container {

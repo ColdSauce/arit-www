@@ -4,7 +4,7 @@
   <div class="col-sm-6 player-card" ng-repeat="player in playerCtrl.players">
     <div class="well">
       <h2>{{player.name}}</h2>
-      <h4>Kills: {{player.kills}} - Deaths: {{player.deaths}} - K/D: {{player.kills / player.deaths | number : 2}}</h4>
+      <h5>Kills: {{player.kills}} - Deaths: {{player.deaths}} - K/D: {{player.kills / player.deaths | number : 2}}</h5>
       <p>{{player.description}}</p>
     </div>
   </div>
